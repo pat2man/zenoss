@@ -55,11 +55,12 @@ action :run do
         batch += "#{device.ipaddress} "
       end
       #set the ID to the ec2 public name or fqdn
-      if device['ec2']
-        batch += "setTitle=\"#{device['ec2']['public_hostname']}\", "
-      else
-        batch += "setTitle=\"#{device['fqdn']}\", "
-      end
+      # if device['ec2']
+      #   batch += "setTitle=\"#{device['ec2']['public_hostname']}\", "
+      # else
+      #   batch += "setTitle=\"#{device['fqdn']}\", "
+      # end
+      batch += "setTitle=\"#{device['name']}\", "
       #set the Location & Groups
       devlocation = ""
       devgroups = "setGroups=["
