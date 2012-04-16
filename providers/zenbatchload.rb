@@ -49,7 +49,7 @@ action :run do
     #add the individual nodes
     devices[dclass]['nodes'].sort_by {|n| n.ipaddress}.each do |device|
       #set for hybrid clouds
-      if device['cloud'] and device['cloud']['public_ips'] and !device.cloud.public_ips[0].nil? !(node['cloud'] and node['cloud']['provider'] != device['cloud']['provider'])
+      if device['cloud'] and device['cloud']['public_ips'] and !device.cloud.public_ips[0].nil? and !(node['cloud'] and node['cloud']['provider'] != device['cloud']['provider'])
         batch += "#{device.cloud.public_ips[0]} "
       else
         batch += "#{device.ipaddress} "
