@@ -60,7 +60,7 @@ action :run do
       # else
       #   batch += "setTitle=\"#{device['fqdn']}\", "
       # end
-      batch += "setTitle=\"#{device['name']}\", "
+      batch += "setTitle=\"#{device.name}\", "
       #set the Location & Groups
       devlocation = ""
       devgroups = "setGroups=["
